@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono&display=swap');
+
+:root{
+    --bg-color-1: #000;
+    --bg-color-2: #fff;
+    --bg-color-3: #070707;
+    --bg-color-4: #f4511e;
+    --bg-color-5: #121212;
+
+
+    --font-color-1: #fff;
+    --font-color-2: #f4511e;
+
+    --border-color-1: #272727;
+    --border-color-2: #f4511e;
+    --border-color-3: #fff;
+}

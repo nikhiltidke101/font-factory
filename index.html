@@ -5,8 +5,198 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Font Factory</title>
+    <link rel="stylesheet" href="./assests/styles/fonts.css">
+    <link rel="stylesheet" href="./assests/styles/styles.css">
+    <link rel="stylesheet" href="./assests/styles/sideNav.css">
+    <link rel="stylesheet" href="./assests/styles/main.css">
+    <link rel="stylesheet" href="./assests/styles/loader.css">
+    <link rel="stylesheet" href="./assests/styles/cssSection.css">
+
+
+    <link rel="stylesheet" href="./assests/css_animation/revolution.css">
+    <link rel="stylesheet" href="./assests/css_animation/shine.css">
+    <!-- <link rel="stylesheet" href="./assests/css_animation/ani-text.css"> -->
+
 </head>
 <body>
+    <div id="tooltip">
+        Copied
+    </div>
+    <div class="loader" id="main-loader">
+        <div class="preloader">
+            <div class="preloader__wheel-wrapper">
+                <div class="preloader__wheel"><span class="preloader__content">f</span>
+                    <div class="preloader__inner-wheel"></div>
+                    <div class="preloader__second-inner-whell"></div>
+                </div>
+            </div>
+            <div class="preloader__wheel-wrapper">
+                <div class="preloader__wheel"><span class="preloader__content">a</span>
+                    <div class="preloader__inner-wheel"></div>
+                    <div class="preloader__second-inner-whell"></div>
+                </div>
+            </div>
+            <div class="preloader__wheel-wrapper">
+                <div class="preloader__wheel"><span class="preloader__content">c</span>
+                    <div class="preloader__inner-wheel"></div>
+                    <div class="preloader__second-inner-whell"></div>
+                </div>
+            </div>
+            <div class="preloader__wheel-wrapper">
+                <div class="preloader__wheel"><span class="preloader__content">t</span>
+                    <div class="preloader__inner-wheel"></div>
+                    <div class="preloader__second-inner-whell"></div>
+                </div>
+            </div>
+            <div class="preloader__wheel-wrapper">
+                <div class="preloader__wheel"><span class="preloader__content">o</span>
+                    <div class="preloader__inner-wheel"></div>
+                    <div class="preloader__second-inner-whell"></div>
+                </div>
+            </div>
+            <div class="preloader__wheel-wrapper">
+                <div class="preloader__wheel"><span class="preloader__content">r</span>
+                    <div class="preloader__inner-wheel"></div>
+                    <div class="preloader__second-inner-whell"></div>
+                </div>
+            </div>
+            <div class="preloader__wheel-wrapper">
+                <div class="preloader__wheel"><span class="preloader__content">y</span>
+                    <div class="preloader__inner-wheel"></div>
+                    <div class="preloader__second-inner-whell"></div>
+                </div>
+            </div>
+        </div>
+    </div>
     
+    <div class="overlay" id="overlay"></div>
+
+    <div class="container">
+        <section class="side-nav" id="side-nav">
+            <div class="side-nav-logo">
+                FONTS <br> FACTORY
+            </div>
+            <div class="side-sections typefaces">
+                <span class="side-section-head" >TYPEFACES</span>
+                <ul class="list">
+                    <li class="typeface-li">
+                        <span class="typeface-list-hover inactive" data-font="all" data-id="1">ALL</span>
+                        <div id="list-hover-section-1" class="hover-section rotate-3d">A</div>
+                    </li>
+                    <li class="typeface-li">
+                        <span class="typeface-list-hover inactive" data-font="serif" data-id="2">SERIF</span>
+                        <div id="list-hover-section-2" class="hover-section rotate-3d">S</div>
+                    </li>
+                    <li class="typeface-li">
+                        <span class="typeface-list-hover inactive" data-font="display" data-id="3">DISPLAY</span>
+                        <div id="list-hover-section-3" class="hover-section rotate-3d">D</div>
+                    </li>
+                    <li class="typeface-li">
+                        <span class="typeface-list-hover inactive" data-font="monospace" data-id="4">MONOSPACE</span>
+                        <div id="list-hover-section-4" class="hover-section rotate-3d">M</div>
+                    </li>
+                    <li class="typeface-li">
+                        <span class="typeface-list-hover inactive" data-font="sans-serif" data-id="5">SANS-SERIF</span>
+                        <div id="list-hover-section-5" class="hover-section rotate-3d">SN</div>
+                    </li>
+                    <li class="typeface-li">
+                        <span class="typeface-list-hover inactive" data-font="handwriting" data-id="6">HANDWRITING</span>
+                        <div id="list-hover-section-6" class="hover-section rotate-3d">H</div>
+                    </li>
+                </ul>
+            </div>
+            <div class="side-sections modes">
+                <span class="side-section-head" >MODES</span>
+                <ul class="list">
+                    <li>
+                        <div class="mode-btn-light"></div>
+                    </li>
+                    <li>
+                        <div class="mode-btn-dark"></div>
+                    </li>
+                </ul>
+            </div>
+            <div class="side-sections socials">
+                <span class="side-section-head">SOCIALS</span>
+                <ul class="list">
+                    <li>
+                        <span class="inactive">TWITTER</span>
+                    </li>
+                    <li>
+                        <span class="inactive">TWITCH</span>
+                    </li>
+                    <li>
+                        <span class="inactive">INSTAGRAM</span>
+                    </li>
+                    <li>
+                        <span class="inactive">GITHUB</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="side-sections support">
+                <span class="side-section-head">SUPPORT</span>
+                <ul class="list">
+                    <li>
+                        <span class="inactive">FACTORY@FONTS.STUDIO</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="arrow-menu-collapse" id="arrow-menu-collapse">
+                <i class="fa-solid fa-arrow-left-long"></i>
+            </div>
+        </section>
+
+        <main class="main-section">
+            <div class="secondary-header-container">
+                <div class="arrow-menu" id="arrow-menu">
+                    <i class="fa-solid fa-arrow-right"></i>
+                </div>
+                <section class="secondary-header">
+                    <div class="search-input">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <input type="text" id="search-input" placeholder="Search Fonts">
+                    </div>
+                    
+                    <div class="custom-input">
+                        <i class="fa-solid fa-i-cursor"></i>
+                        <input type="text" id="custom-input" placeholder="Type Something Here">
+                    </div>
+
+                    <div class="font-slider">
+                        <span id="range-value">72</span>px
+                        <input class="range" id="range-slider" type="range" value="72" min="16" max="90"></input>
+                    </div>
+
+                    <div class="reset-section" id="reset-btn">
+                        <i class="fa-solid fa-rotate-right"></i>
+                    </div>
+                </section>
+            </div>
+            <section class="card-container" id="card-container">
+
+            </section>
+        </main>
+    </div>
+
+    <div class="anim-container">
+        <div class="right-layer"></div>
+        <div class="right-layer right-layer--2"></div>
+        <div class="right-layer right-layer--3"></div>
+
+        <div class="animation-div" id="animation-div">
+        
+        </div>
+    </div>
 </body>
+<script type="module" src="./scripts/sideNav.js"></script>
+<script type="module" src="./scripts/headerControls.js"></script>
+<script type="module" src="./scripts/index.js"></script>
+<script type="module" src="./scripts/fontCard.js"></script>
+<script type="module" src="./scripts/loader.js"></script>
+<script type="module" src="./scripts/cssScreen.js"></script>
+<script
+      src="https://kit.fontawesome.com/de01e3e79c.js"
+      crossorigin="anonymous" defer
+    ></script>
+
 </html>

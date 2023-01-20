@@ -1,1 +1,58 @@
-/* Intial CSS File */
+@import url("variables.css");
+html{
+     scroll-behavior: smooth;
+}
+body{
+    font-family: 'Space Mono', monospace;
+    color: var(--font-color-1);
+    margin: 0;
+    padding: 0;
+    background: var(--bg-color-2);
+}
+::-webkit-scrollbar {
+    position: absolute;
+    width: 3px;
+}
+  
+/* Track */
+::-webkit-scrollbar-track {
+    position: absolute;
+    border-radius: 10px;
+    background: rgba(245, 128, 60, 0.3);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb{
+    border-radius: 10px;
+    background: rgba(245, 128, 60, 0.8);
+}
+
+::-webkit-scrollbar-thumb:active{
+    background: rgba(245, 128, 60, 0.8);
+}
+
+.container{
+    position: fixed;
+    display: flex;
+    height: 100%;
+    width: 100vw;
+    background-color: #000;
+    overflow: hidden;
+}
+
+#tooltip{
+    position: fixed;
+    display: inline-block;
+    color: aliceblue;
+    z-index: 5;
+    padding: 5px 10px;
+    background-color: var(--bg-color-4);
+    opacity: 0;
+    border-radius: 10px;
+}
+
+@media (max-width: 800px) {
+    .container{
+        position: absolute;
+    }
+}
