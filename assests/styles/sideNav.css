@@ -9,6 +9,7 @@
     border-right: 1px solid var(--border-color-1);
     height: 100vh;
     transition: all 1.5s ease-in-out;
+    overflow-y: scroll;
 }
 
 .side-nav-logo{

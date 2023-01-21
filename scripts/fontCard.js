@@ -71,7 +71,7 @@ export default function renderFonts(fontData) {
                 fontCardOption.style.display = "none";
             }
         })
-        fontTransform.querySelector("#normalize").style.color = "orange";
+        fontTransform.querySelector("#normalize").style.color = "#f4511e";
     
         const fontStyleOptions = fontCardOption.querySelectorAll(".font-style-o");
         fontStyleOptions.forEach((style) => {
@@ -92,7 +92,7 @@ export default function renderFonts(fontData) {
                     fontItalic.style.color = "white";
                 }else{
                     fontContainer.style.fontStyle = "italic";
-                    fontItalic.style.color = "orange";
+                    fontItalic.style.color = "#f4511e";
                 }
             })
         }
@@ -100,13 +100,13 @@ export default function renderFonts(fontData) {
         fontTransform.querySelector("#capitalize").addEventListener("click", ()=>{
             // console.log("clicked");
             fontTransform.querySelector("#normalize").style.color = "white";
-            fontTransform.querySelector("#capitalize").style.color = "orange";
+            fontTransform.querySelector("#capitalize").style.color = "#f4511e";
             fontContainer.style.textTransform = "uppercase";
         })
     
         fontTransform.querySelector("#normalize").addEventListener("click", ()=>{
             // console.log("clicked");
-            fontTransform.querySelector("#normalize").style.color = "orange";
+            fontTransform.querySelector("#normalize").style.color = "#f4511e";
             fontTransform.querySelector("#capitalize").style.color = "white";
             fontContainer.style.textTransform = "capitalize";
         })
