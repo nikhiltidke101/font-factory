@@ -23,5 +23,6 @@ const toolTip = document.getElementById("tooltip");
 window.addEventListener("mousemove", (e)=>{
     toolTip.style.left = e.clientX + 10 + "px";
     toolTip.style.top = e.clientY + 10 + "px";
-})
+});
+
 // toolTip.style.left = window.

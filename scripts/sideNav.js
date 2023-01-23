@@ -39,5 +39,4 @@ arrowMenuOpen.addEventListener("click", ()=>{
 arrowMenuCollapse.addEventListener("click", ()=>{
     sideNav.classList.toggle("side-nav-open");
     overlay.classList.toggle("overlay-open");
-
 });
