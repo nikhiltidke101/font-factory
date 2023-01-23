@@ -151,6 +151,7 @@
         position: fixed;
         z-index: 3;
         transform: translateX(-300px); 
+        font-size: 15px;
     }
 
     .arrow-menu-collapse{

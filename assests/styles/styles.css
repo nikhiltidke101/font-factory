@@ -1,6 +1,6 @@
 @import url("variables.css");
 html{
-     scroll-behavior: smooth;
+     scroll-behavior: smooth !important;
 }
 body{
     font-family: 'Space Mono', monospace;
