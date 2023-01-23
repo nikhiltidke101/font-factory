@@ -4,6 +4,7 @@ import fontData from '../fonts.json' assert {type: 'json'};
 const typefaceList = document.getElementsByClassName("typeface-list-hover");
 
 
+console.log("Rednderrinnnnn");
 renderFonts(fontData);
 typefaceList[0].classList.add("active");
 for(let i=0; i<typefaceList.length; i++){
