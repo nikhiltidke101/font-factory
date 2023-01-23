@@ -45,8 +45,8 @@ export default function renderAnimation () {
                             </div>
 
                             <div class="font-slider">
-                                <span id="animation-range-value">72</span>px
-                                <input class="range" id="animation-range-slider" type="range" value="72" min="16" max="120"></input>
+                                <span id="animation-range-value">120</span>px
+                                <input class="range" id="animation-range-slider" type="range" value="120" min="16" max="180"></input>
                             </div>
 
                             <div class="reset-section" id="animation-reset-btn">
@@ -470,9 +470,10 @@ export default function renderAnimation () {
                 const animationResetBtn = document.getElementById("animation-reset-btn");
                 animationResetBtn.addEventListener("click", ()=>{
                     customInput.value = "";
-                    animationRangeValue.innerText = 72;
+                    animationRangeValue.innerText = 120;
+                    animationRangeSlider.value = 120;
                     for(let i=0; i<animationContainer.length; i++){
-                        animationContainer[i].style.fontSize = 72 + 'px';
+                        animationContainer[i].style.fontSize = 120 + 'px';
                     }
                     const donutsMask = animationCards[i].getElementsByClassName("donuts_mask");
                     for(let i=0; i<donutsMask.length; i++){
