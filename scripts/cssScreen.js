@@ -37,6 +37,23 @@ export default function renderAnimation () {
                 </div>
     
                 <div class="animation-card-container" id="animation-card-container">
+                    <div class="animation-custom">
+                        <section class="animation-secondary-header">
+                            <div class="custom-animation-input">
+                                <i class="fa-solid fa-i-cursor"></i>
+                                <input type="text" id="custom-animation-input" placeholder="Type Something Here">
+                            </div>
+
+                            <div class="font-slider">
+                                <span id="animation-range-value">72</span>px
+                                <input class="range" id="animation-range-slider" type="range" value="72" min="16" max="120"></input>
+                            </div>
+
+                            <div class="reset-section" id="animation-reset-btn">
+                                <i class="fa-solid fa-rotate-right"></i>
+                            </div>
+                        </section>
+                    </div>
                     <div class="animation-card" data-id="1">
                         <div class="animation-card-header"">
                             <div class="animation-card-title">Rotator</div>
@@ -44,6 +61,7 @@ export default function renderAnimation () {
                             <div class="animation-card-header-buttons" id="anim-preview">Preview</div>
                             <div class="animation-card-header-buttons" id="code-preview">Code</div>
                         </div>
+                        
                         <div class="animation-preview-container">
                             <div class="animation-preview" id="html" style="font-family:${font.font_family}">
                                 <div class="donuts">
@@ -294,7 +312,7 @@ export default function renderAnimation () {
                         </div>
                         <div class="animation-preview-container">
                             <div class="animation-preview" id="html" style="font-family:${font.font_family}">
-                                <p class="shine">SHINE</p>
+                                <p class="shine" id="shine">SHINE</p>
                             </div>
                             <div class="animation-code-container" id="animation-code-con">
                                 <div class="animation-code-specific-container">
@@ -302,18 +320,7 @@ export default function renderAnimation () {
                                         HTML <i class="fa-regular fa-copy" id="copy-html"></i>
                                     </div>
                                     <pre><code>
-                                        &lt;div class='donuts'&gt;
-                                                &lt;div class='donuts_mask'&gt;ROTATOR&lt;/div&gt;
-                                                &lt;div class='donuts_mask'&gt;ROTATOR&lt;/div&gt;
-                                                &lt;div class='donuts_mask'&gt;ROTATOR&lt;/div&gt;
-                                                &lt;div class='donuts_mask'&gt;ROTATOR&lt;/div&gt;
-                                                &lt;div class='donuts_mask'&gt;ROTATOR&lt;/div&gt;
-                                                &lt;div class='donuts_mask'&gt;ROTATOR&lt;/div&gt;
-                                                &lt;div class='donuts_mask'&gt;ROTATOR&lt;/div&gt;
-                                                &lt;div class='donuts_mask'&gt;ROTATOR&lt;/div&gt;
-                                                &lt;div class='donuts_mask'&gt;ROTATOR&lt;/div&gt;
-                                                &lt;div class='donuts_mask'&gt;ROTATOR&lt;/div&gt;
-                                        &lt;/div&gt;
+                                    &lt;p class='shine' id="shine" &gt; SHINE &lt;/p&gt;
                                     </code></pre>
                                 </div>
                                 <div class="animation-code-specific-container">
@@ -437,6 +444,43 @@ export default function renderAnimation () {
                         toolTip.style.opacity = "0";
                     }, 500);
                 });
+
+
+                const customInput = document.getElementById("custom-animation-input");
+                customInput.addEventListener("input", ()=>{
+                    const donutsMask = animationCards[i].getElementsByClassName("donuts_mask");
+                    for(let i=0; i<donutsMask.length; i++){
+                        donutsMask[i].innerHTML = customInput.value;
+                    }
+                    const shine = animationCards[i].querySelector("#shine");
+                    shine.innerHTML = customInput.value;
+                }) 
+
+                const animationRangeSlider = document.getElementById("animation-range-slider");
+                const animationRangeValue = document.getElementById("animation-range-value");
+                const animationContainer = document.querySelectorAll(".animation-preview");
+                
+                animationRangeSlider.addEventListener("mousemove", (e)=>{
+                    animationRangeValue.innerText = e.target.value;
+                    for(let i=0; i<animationContainer.length; i++){
+                        animationContainer[i].style.fontSize = e.target.value + 'px';
+                    }
+                })
+
+                const animationResetBtn = document.getElementById("animation-reset-btn");
+                animationResetBtn.addEventListener("click", ()=>{
+                    customInput.value = "";
+                    animationRangeValue.innerText = 72;
+                    for(let i=0; i<animationContainer.length; i++){
+                        animationContainer[i].style.fontSize = 72 + 'px';
+                    }
+                    const donutsMask = animationCards[i].getElementsByClassName("donuts_mask");
+                    for(let i=0; i<donutsMask.length; i++){
+                        donutsMask[i].innerHTML = "Rotator";
+                    }
+                    const shine = animationCards[i].querySelector("#shine");
+                    shine.innerHTML = "Shine";
+                })
             }
         });
     }

@@ -83,6 +83,7 @@
     position: absolute;
     bottom:0;
     color: var(--font-color-2);
+    font-family: 'Kumar One Outline', cursive;
     left: 8rem;
     font-size: 70px;
     transition: all ease-in-out 0.5s;

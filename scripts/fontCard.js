@@ -56,7 +56,7 @@ export default function renderFonts(fontData) {
             </div>
         </div>
         <div class="font-container resizable" id="font-container" style="font-family:${data.font_family}">
-            Font Factory
+            Fonts Factory
         </div>
         `
         const fontCardSelect = fontCard.querySelector("#font-card-select");
