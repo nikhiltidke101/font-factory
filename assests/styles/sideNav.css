@@ -110,6 +110,9 @@
 
 
 .arrow-menu-collapse{
+    position: absolute;
+    top: 20px;
+    left: 230px;
     display: none;
     align-self: center;
     justify-self: flex-end;
