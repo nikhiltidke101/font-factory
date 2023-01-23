@@ -1,3 +1,10 @@
+const searchInput = document.getElementById("search-input");
+const customInput = document.getElementById("custom-input");
+const rangeValue = document.getElementById("range-value");  
+const rangeSlider = document.getElementById("range-slider");  
+const resetBtn = document.getElementById("reset-btn")
+const fontContainers = document.getElementsByClassName("font-container");
+
 const fontData = [{
     "id":"serif-1",
     "typeface": "serif",
@@ -301,16 +308,16 @@ function renderAnimation () {
                         <div class="animation-preview-container">
                             <div class="animation-preview" id="html" style="font-family:${font.font_family}">
                                 <div class="donuts">
-                                    <div class="donuts_mask">ROTATOR</div>
-                                    <div class="donuts_mask">ROTATOR</div>
-                                    <div class="donuts_mask">ROTATOR</div>
-                                    <div class="donuts_mask">ROTATOR</div>
-                                    <div class="donuts_mask">ROTATOR</div>
-                                    <div class="donuts_mask">ROTATOR</div>
-                                    <div class="donuts_mask">ROTATOR</div>
-                                    <div class="donuts_mask">ROTATOR</div>
-                                    <div class="donuts_mask">ROTATOR</div>
-                                    <div class="donuts_mask">ROTATOR</div>
+                                    <div class="donuts_mask">${customInput.value ? customInput.value : "ROTATOR"}</div>
+                                    <div class="donuts_mask">${customInput.value ? customInput.value : "ROTATOR"}</div>
+                                    <div class="donuts_mask">${customInput.value ? customInput.value : "ROTATOR"}</div>
+                                    <div class="donuts_mask">${customInput.value ? customInput.value : "ROTATOR"}</div>
+                                    <div class="donuts_mask">${customInput.value ? customInput.value : "ROTATOR"}</div>
+                                    <div class="donuts_mask">${customInput.value ? customInput.value : "ROTATOR"}</div>
+                                    <div class="donuts_mask">${customInput.value ? customInput.value : "ROTATOR"}</div>
+                                    <div class="donuts_mask">${customInput.value ? customInput.value : "ROTATOR"}</div>
+                                    <div class="donuts_mask">${customInput.value ? customInput.value : "ROTATOR"}</div>
+                                    <div class="donuts_mask">${customInput.value ? customInput.value : "ROTATOR"}</div>
                                 </div>
                             </div>
                             <div class="animation-code-container" id="animation-code-con">
@@ -548,7 +555,7 @@ function renderAnimation () {
                         </div>
                         <div class="animation-preview-container">
                             <div class="animation-preview" id="html" style="font-family:${font.font_family}">
-                                <p class="shine" id="shine">SHINE</p>
+                                <p class="shine" id="shine">${customInput.value ? customInput.value : "SHINE"}</p>
                             </div>
                             <div class="animation-code-container" id="animation-code-con">
                                 <div class="animation-code-specific-container">
@@ -682,14 +689,15 @@ function renderAnimation () {
                 });
 
 
-                const customInput = document.getElementById("custom-animation-input");
-                customInput.addEventListener("input", ()=>{
+                const customAniInput = document.getElementById("custom-animation-input");
+                customAniInput.value = customInput.value;
+                customAniInput.addEventListener("input", ()=>{
                     const donutsMask = animationCards[i].getElementsByClassName("donuts_mask");
                     for(let i=0; i<donutsMask.length; i++){
-                        donutsMask[i].innerHTML = customInput.value;
+                        donutsMask[i].innerHTML = customAniInput.value;
                     }
                     const shine = animationCards[i].querySelector("#shine");
-                    shine.innerHTML = customInput.value;
+                    shine.innerHTML = customAniInput.value;
                 }) 
 
                 const animationRangeSlider = document.getElementById("animation-range-slider");
@@ -705,7 +713,7 @@ function renderAnimation () {
 
                 const animationResetBtn = document.getElementById("animation-reset-btn");
                 animationResetBtn.addEventListener("click", ()=>{
-                    customInput.value = "";
+                    customAniInput.value = "";
                     animationRangeValue.innerText = 120;
                     animationRangeSlider.value = 120;
                     for(let i=0; i<animationContainer.length; i++){
@@ -840,15 +848,9 @@ function renderFonts(fontData) {
     renderAnimation();
 }
 
-
-const searchInput = document.getElementById("search-input");
-const customInput = document.getElementById("custom-input");
-const rangeValue = document.getElementById("range-value");  
-const rangeSlider = document.getElementById("range-slider");  
-const resetBtn = document.getElementById("reset-btn")
-const fontContainers = document.getElementsByClassName("font-container");
-
+renderFonts(fontData);
 customInput.addEventListener("input", (e)=>{
+    renderFonts(fontData);
     for(let i=0; i<fontContainers.length; i++){
         fontContainers[i].innerHTML = e.target.value;
     }
@@ -866,13 +868,14 @@ rangeSlider.addEventListener("mousemove", (e)=>{
     for(let i=0; i<fontContainers.length; i++){
         fontContainers[i].style.fontSize = e.target.value + 'px';
     }
-})
+});
 
 resetBtn.addEventListener("click", ()=>{
+    customInput.value = "";
     rangeSlider.value = 72;
     rangeValue.innerText = 72;
     for(let i=0; i<fontContainers.length; i++){
         fontContainers[i].style.fontSize = 72 + 'px';
         fontContainers[i].innerHTML = "Font Factory";
     }
-})
+});

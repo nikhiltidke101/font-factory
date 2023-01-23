@@ -311,9 +311,11 @@ export default function renderAnimation () {
                             <div class="animation-card-header-buttons" id="code-preview">Code</div>
                         </div>
                         <div class="animation-preview-container">
+                        
                             <div class="animation-preview" id="html" style="font-family:${font.font_family}">
                                 <p class="shine" id="shine">SHINE</p>
                             </div>
+
                             <div class="animation-code-container" id="animation-code-con">
                                 <div class="animation-code-specific-container">
                                     <div class="copy-code">

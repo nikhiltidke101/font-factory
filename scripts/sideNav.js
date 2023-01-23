@@ -253,6 +253,8 @@ function renderAnimation () {
     
             let font = fontData.find(object => object.id === dataId);
             // console.log(font);
+            // const animationText = customInput.value;
+            // console.log(animationText);
             animationDiv.innerHTML =`
             <div class="animation-container" id="animation-container">
                 <div class="animation-header">
@@ -847,11 +849,9 @@ function renderFonts(fontData) {
 const typefaceList = document.getElementsByClassName("typeface-list-hover");
 
 console.log("Rednderrinnnnn");
-renderFonts(fontData);
 typefaceList[0].classList.add("active");
 for(let i=0; i<typefaceList.length; i++){
     typefaceList[i].addEventListener("click", ()=>{
-        // console.log(i);
         for(let j=0; j<typefaceList.length; j++){
             typefaceList[j].classList.remove("active");
         }
@@ -864,7 +864,6 @@ for(let i=0; i<typefaceList.length; i++){
             let filteredData = fontData.filter((obj) => {
                 return obj.typeface === fontTypeface;
             });
-            // console.log(filteredData);
             renderFonts(filteredData);
         }
     })

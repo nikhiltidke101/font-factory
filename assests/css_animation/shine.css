@@ -1,4 +1,7 @@
 .shine {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     text-align: center;
     background: linear-gradient(90deg, #000, #fff, #000);
     letter-spacing: 5px;
